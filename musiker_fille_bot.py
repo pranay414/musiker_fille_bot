@@ -1,3 +1,4 @@
+# - *- coding: utf- 8 - *-
 """ Bot to suggest music from Spotify based on your mood.
 """
 import logging
