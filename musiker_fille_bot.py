@@ -20,6 +20,7 @@ def main():
 
     # Get dispatcher to register handlers
     dispatcher = updater.dispatcher
+    print("Bot started!")
 
     # On different commands - answer in Telegram
     dispatcher.add_handler(CommandHandler('start', start))
