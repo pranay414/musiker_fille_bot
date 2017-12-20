@@ -10,7 +10,6 @@ from access_token import AUTH_TOKEN, CLIENT_ID, CLIENT_SECRET
 # Intialise spotipy
 client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-release = [{'track':'Revival','artist':'Eminem'},{'track':'Coala','artist':'Corobo'}]
 
 # Define command handlers. They usually take two arguments bot and update
 # In case of error handler they recieve TelegramError object in error
@@ -22,10 +21,10 @@ def help(bot, update):
 
 def new(bot, update):
     response = []
-    results = sp.new_releases(country='US',limit=5)
+    results = sp.new_releases(country='US',limit=10)
     for i, album in enumerate(results['albums']['items'],1):
-        response.append(' ' + str(i) + ' ' + album['name'] + '-' + album['artists'][0]['name'])
-    update.message.reply_text(response)
+        response.append(' ' + str(i) + ' ' + album['name'] + ' - ' + album['artists'][0]['name'])
+    update.message.reply_text('\n\n'.join(response))
 
 def echo(bot, update):
     update.message.reply_text(update.message.text)
