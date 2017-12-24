@@ -26,8 +26,8 @@ def new(bot, update):
         response.append(' ' + str(i) + ' ' + album['name'] + ' - ' + album['artists'][0]['name'])
     update.message.reply_text('\n\n'.join(response))
 
-def echo(bot, update):
-    update.message.reply_text(update.message.text)
+def sorry(bot, update):
+    update.message.reply_text("Sorry, I didn't get you. Type /help to get the list of available commands.")
 
 def main():
     """Start the bot"""
@@ -42,9 +42,10 @@ def main():
     dispatcher.add_handler(CommandHandler('start', start))
     dispatcher.add_handler(CommandHandler('help', help))
     dispatcher.add_handler(CommandHandler('new', new))
+    # dispatcher.add_handler(CommandHandler(''))
 
     # On non-command i.e message - echo the message in telegram
-    dispatcher.add_handler(MessageHandler(Filters.text, echo))
+    dispatcher.add_handler(MessageHandler(Filters.text, sorry))
 
     # Start the Bot
     updater.start_polling()
