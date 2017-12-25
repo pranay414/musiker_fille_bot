@@ -16,7 +16,7 @@ def start(bot, update):
     update.message.reply_text("I'm Sarika and music is my life😉")
 
 def help(bot, update):
-    update.message.reply_text("I am Sarika and I'll help you find the right music based on your mood\n\nYou can control me by sending these commands:\n\n/start - start a conversation with bot\n/help - get help from bot")
+    update.message.reply_text("I am Sarika and I'll help you find the right music based on your mood\n\nYou can control me by sending these commands:\n\n/start - start a conversation with bot\n/new - get new releases from Spotify\n/help - get help from bot")
 
 def new(bot, update):
     response = []
