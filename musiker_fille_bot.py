@@ -1,14 +1,13 @@
 # - *- coding: utf- 8 - *-
 """ Bot to suggest music from Spotify based on your mood.
 """
-import logging
-import spotipy
+import spotipy, os
 from spotipy.oauth2 import SpotifyClientCredentials
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-from access_token import AUTH_TOKEN, CLIENT_ID, CLIENT_SECRET
+#from access_token import AUTH_TOKEN, CLIENT_ID, CLIENT_SECRET
 
 # Intialise spotipy
-client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
+client_credentials_manager = SpotifyClientCredentials(client_id=os.environ['CLIENT_ID'], client_secret=os.environ['CLIENT_SECRET'])
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 # Define command handlers. They usually take two arguments bot and update
@@ -32,7 +31,7 @@ def sorry(bot, update):
 def main():
     """Start the bot"""
     # Create event handler and pass it your bot's token
-    updater = Updater(AUTH_TOKEN)
+    updater = Updater(os.environ['AUTH_TOKEN'])
 
     # Get dispatcher to register handlers
     dispatcher = updater.dispatcher
