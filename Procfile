@@ -1,1 +1,1 @@
-web: python musiker_fille_bot.py
+worker: python musiker_fille_bot.py
