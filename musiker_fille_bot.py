@@ -13,10 +13,10 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 # Define command handlers. They usually take two arguments bot and update
 # In case of error handler they recieve TelegramError object in error
 def start(bot, update):
-    update.message.reply_text("I'm Sarika and music is my life😉")
+    update.message.reply_text("I can help you find the best music from Spotify 😉")
 
 def help(bot, update):
-    update.message.reply_text("I am Sarika and I'll help you find the right music based on your mood\n\nYou can control me by sending these commands:\n\n/start - start a conversation with bot\n/new - get new releases from Spotify\n/help - get help from bot")
+    update.message.reply_text("You can control me by sending these commands:\n\n/start - start a conversation with bot\n/new - get new releases from Spotify\n/help - get help from bot")
 
 def new(bot, update):
     response = []
