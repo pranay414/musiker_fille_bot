@@ -1,6 +1,6 @@
 # musiker_fille_bot
 ## What is it?
-musiker_fille_bot is Telegram based chatbot which will suggest you music from Spotify based on your mood.
+musiker_fille_bot is Telegram based chatbot which gets a list of new releases from Spotify.
 
 ## How to use it?
 * Download Telegram app in your phone or desktop.
